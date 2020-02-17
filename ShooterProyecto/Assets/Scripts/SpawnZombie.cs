@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class SpawnZombie : MonoBehaviour
 {
-    public GameObject zombie;
+    
     
     private int tiempo;
 
