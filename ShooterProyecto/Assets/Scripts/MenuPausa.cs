@@ -9,6 +9,7 @@ public class MenuPausa : MonoBehaviour
     public static bool gameIsPause;
     public GameObject panelPausa;
     public GameObject Puntero;
+   
 
     // Start is called before the first frame update
     void Start()
@@ -43,12 +44,16 @@ public class MenuPausa : MonoBehaviour
         }
         else
         {
-            panelPausa.SetActive(false);
-            gameIsPause = false;
-            Time.timeScale = 1f;
-            Puntero.SetActive(true);
+            reanudar();
         }
     }
 
+    public void reanudar()
+    {
+        panelPausa.SetActive(false);
+        gameIsPause = false;
+        Time.timeScale = 1f;
+        Puntero.SetActive(true);
+    }
 
 }
