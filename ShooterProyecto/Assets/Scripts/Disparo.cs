@@ -7,7 +7,7 @@ public class Disparo : MonoBehaviour
 {
 
     public Camera camara;
-    public GameObject sonidoDisparo;
+    //public GameObject sonidoDisparo;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +22,7 @@ public class Disparo : MonoBehaviour
             if (Input.GetButtonDown("Fire1"))
             {
                 shoot();
-                Instantiate(sonidoDisparo);
+                //Instantiate(sonidoDisparo);
             }
         }
     }
