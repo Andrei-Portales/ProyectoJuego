@@ -8,7 +8,7 @@ public class MenuPausa : MonoBehaviour
 {
     public static bool gameIsPause;
     public GameObject panelPausa;
-    public GameObject Puntero;
+    public GameObject[] Puntero;
    
 
     // Start is called before the first frame update
@@ -40,7 +40,11 @@ public class MenuPausa : MonoBehaviour
             panelPausa.SetActive(true);
             gameIsPause = true;
             Time.timeScale = 0f;
-            Puntero.SetActive(false);
+
+            foreach(GameObject g in Puntero)
+            {
+                g.SetActive(false);
+            }
         }
         else
         {
@@ -53,7 +57,10 @@ public class MenuPausa : MonoBehaviour
         panelPausa.SetActive(false);
         gameIsPause = false;
         Time.timeScale = 1f;
-        Puntero.SetActive(true);
+        foreach (GameObject g in Puntero)
+        {
+            g.SetActive(true);
+        }
     }
 
 }

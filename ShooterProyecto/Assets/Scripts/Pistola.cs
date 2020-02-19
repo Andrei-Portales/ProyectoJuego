@@ -48,24 +48,28 @@ public class Pistola : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (isReloading)
-        {
-            return;
-        }
-
-        if (currentAmmo <= 0)
-        {
-            StartCoroutine(Reload());
-            return;
-        }
-
-        if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+        if (!MenuPausa.gameIsPause)
         {
 
-            mAudioSrc.Play();
+            if (isReloading)
+            {
+                return;
+            }
 
-            nextTimeToFire = Time.time + 1f / fireRate;
-            Disparar();
+            if (currentAmmo <= 0)
+            {
+                StartCoroutine(Reload());
+                return;
+            }
+
+            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+            {
+
+                mAudioSrc.Play();
+
+                nextTimeToFire = Time.time + 1f / fireRate;
+                Disparar();
+            }
         }
 
     }
