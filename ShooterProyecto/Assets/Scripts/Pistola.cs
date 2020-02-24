@@ -90,27 +90,16 @@ public class Pistola : MonoBehaviour
             Target target = hit.transform.GetComponent<Target>();
 
             // Verifica que el objeto impactado no sea null
-            if (target != null)
+            if (target)
             {
                 // Se manda ca cantidad de daño
                 target.TakeDamage(damage);
-
-                // Se verifica si el total de vida es cero o menor y devuelve un booleano
-                if(target.esEnemigoMuerto)
-                {
-                    // Aumenta si es verdadero
-                    enemigosMuertos++;
-                    muertos.text = enemigosMuertos + " / 3";
-                }
             }
 
             
             //  Si el objeto que impacta no es null, se aplica una fuerza para moverlo, 
             // dependiendo del eje donde viene la fuerza
-            if (hit.rigidbody != null)
-            {
-                hit.rigidbody.AddForce(-hit.normal * impactForce);
-            }
+           
 
             // Destruye las balas creadas en cada disparo cada 2 segundos
             GameObject impactGO = Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
