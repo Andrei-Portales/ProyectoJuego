@@ -5,6 +5,15 @@ using UnityEngine.UI;
 
 public class Pistola : MonoBehaviour
 {
+    public Animator animator;
+    public GameObject scopeOverlay;
+    public GameObject weaponCamera;
+    public Camera mainCamera;
+
+    public float scopedFOV = 15f;
+    private float normalFOV;
+
+    private bool isScoped = false;
 
     public float damage = 10f;
     public float range = 100f;
@@ -70,6 +79,21 @@ public class Pistola : MonoBehaviour
                 nextTimeToFire = Time.time + 1f / fireRate;
                 Disparar();
             }
+
+            if (Input.GetButtonDown("Fire2"))
+            {
+                isScoped = !isScoped;
+                animator.SetBool("Scoped", isScoped);
+
+                if (isScoped)
+                {
+                    StartCoroutine(OnScoped());
+                }
+                else
+                {
+                    OnUnScoped();
+                }
+            }
         }
 
     }
@@ -131,5 +155,25 @@ public class Pistola : MonoBehaviour
         balas.text = currentAmmo + " / " + maxAmmo;
 
         isReloading = false;
+    }
+
+
+    void OnUnScoped()
+    {
+        scopeOverlay.SetActive(false);
+        weaponCamera.SetActive(true);
+
+        mainCamera.fieldOfView = normalFOV;
+
+    }
+
+    IEnumerator OnScoped()
+    {
+        yield return new WaitForSeconds(.15f);
+        scopeOverlay.SetActive(true);
+        weaponCamera.SetActive(false);
+
+        normalFOV = mainCamera.fieldOfView;
+        mainCamera.fieldOfView = scopedFOV;
     }
 }
