@@ -9,7 +9,7 @@ public class Target : MonoBehaviour
     private float health;
     private bool esEnemigoMuerto;
 
-    public GameObject Personaje;
+    private GameObject Personaje;
     private NavMeshAgent agent;
     private Animator anim;
 
@@ -17,6 +17,10 @@ public class Target : MonoBehaviour
     private GameObject sonidoInstance;
    
    
+    public void setPersonaje(GameObject per)
+    {
+        Personaje = per;
+    }
 
     void Start()
     {
@@ -27,7 +31,7 @@ public class Target : MonoBehaviour
         health = 100f;
         esEnemigoMuerto = false;
         agent.speed = 2.5f;
-        sonidoInstance = Instantiate(PrefabsonidoZombie);
+       
     }
 
     void Update()
