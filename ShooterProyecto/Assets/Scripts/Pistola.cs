@@ -7,7 +7,6 @@ public class Pistola : MonoBehaviour
 {
     public Animator animator;
     public GameObject scopeOverlay;
-    public GameObject weaponCamera;
     public Camera mainCamera;
 
     public float scopedFOV = 15f;
@@ -15,7 +14,7 @@ public class Pistola : MonoBehaviour
 
     private bool isScoped = false;
 
-    public float damage = 10f;
+    public float damage = 50f;
     public float range = 100f;
     public float impactForce = 30f;
     public float fireRate = 15f;
@@ -24,6 +23,10 @@ public class Pistola : MonoBehaviour
     private int currentAmmo;
     public float reloadTime = 1f;
     private bool isReloading = false;
+
+    public GameObject bottomSettings;
+    public GameObject middleSettings;
+
 
     public Camera fpsCam;
     //public ParticleSystem muzzleFlash;
@@ -161,9 +164,12 @@ public class Pistola : MonoBehaviour
     void OnUnScoped()
     {
         scopeOverlay.SetActive(false);
-        weaponCamera.SetActive(true);
 
         mainCamera.fieldOfView = normalFOV;
+
+        bottomSettings.SetActive(true);
+        middleSettings.SetActive(true);
+
 
     }
 
@@ -171,9 +177,13 @@ public class Pistola : MonoBehaviour
     {
         yield return new WaitForSeconds(.15f);
         scopeOverlay.SetActive(true);
-        weaponCamera.SetActive(false);
 
         normalFOV = mainCamera.fieldOfView;
         mainCamera.fieldOfView = scopedFOV;
+
+        bottomSettings.SetActive(false);
+        middleSettings.SetActive(false);
+
+
     }
 }

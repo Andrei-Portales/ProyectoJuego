@@ -96,34 +96,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &4859602334912855919
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4859602334912756162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 390b96d2a4ab3c247825dec42d1e8599, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 4859602334922263042}
-  scopeOverlay: {fileID: 0}
-  weaponCamera: {fileID: 4859602335234180736}
-  mainCamera: {fileID: 4859602335572392750}
-  scopedFOV: 15
-  damage: 25
-  range: 100
-  impactForce: 30
-  fireRate: 5
-  maxAmmo: 5
-  reloadTime: 1
-  fpsCam: {fileID: 4859602335572392750}
-  impactEffect: {fileID: 0}
-  balas: {fileID: 0}
-  muertos: {fileID: 0}
-  txtReloading: {fileID: 0}
 --- !u!1 &4859602335234180736
 GameObject:
   m_ObjectHideFlags: 0
@@ -688,34 +660,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4859602335943984402
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4859602335651000967}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 390b96d2a4ab3c247825dec42d1e8599, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 4859602335943984400}
-  scopeOverlay: {fileID: 0}
-  weaponCamera: {fileID: 4859602335234180736}
-  mainCamera: {fileID: 4859602335572392750}
-  scopedFOV: 15
-  damage: 10
-  range: 100
-  impactForce: 30
-  fireRate: 15
-  maxAmmo: 30
-  reloadTime: 1
-  fpsCam: {fileID: 4859602335572392750}
-  impactEffect: {fileID: 0}
-  balas: {fileID: 0}
-  muertos: {fileID: 0}
-  txtReloading: {fileID: 0}
 --- !u!1 &4859602336781487544
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,12 +792,6 @@ GameObject:
 --- !u!4 &4859602334912980450 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 7d826fa73814901419321b250b232a6f,
-    type: 3}
-  m_PrefabInstance: {fileID: 4859602334912855906}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &4859602334922263042 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 9500000, guid: 7d826fa73814901419321b250b232a6f,
     type: 3}
   m_PrefabInstance: {fileID: 4859602334912855906}
   m_PrefabAsset: {fileID: 0}

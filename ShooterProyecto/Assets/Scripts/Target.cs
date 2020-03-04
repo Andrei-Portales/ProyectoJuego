@@ -15,8 +15,8 @@ public class Target : MonoBehaviour
 
     public GameObject PrefabsonidoZombie;
     private GameObject sonidoInstance;
-   
-   
+    public Slider healthBar;
+
     public void setPersonaje(GameObject per)
     {
         Personaje = per;
@@ -73,7 +73,7 @@ public class Target : MonoBehaviour
         if (!esEnemigoMuerto)
         {
             health -= amount;
-            //healthBar.fillAmount = health / 100f;
+            healthBar.value = health / 100f;
         }
 
     }
