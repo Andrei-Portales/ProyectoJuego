@@ -47,18 +47,11 @@ public class Target : MonoBehaviour
             
             agent.speed = 0f;
             anim.SetBool("isLive", false);
-            GetComponent<CapsuleCollider>().radius = 2f;
-            
-            if (sonidoInstance)
-            {
-                Destroy(sonidoInstance);
-                Destroy(gameObject, 10);
-            }
-               
-
-
            
-
+            
+            Destroy(sonidoInstance);
+            
+            Destroy(gameObject, 10);
         }
 
     }
