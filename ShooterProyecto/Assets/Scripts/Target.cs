@@ -61,6 +61,11 @@ public class Target : MonoBehaviour
         Debug.Log(collision.transform.tag);
     }
 
+    public void setSlider(Slider slider)
+    {
+        healthBar = slider;
+    }
+
     public void TakeDamage(float amount)
     {
         if (!esEnemigoMuerto)
