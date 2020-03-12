@@ -11,7 +11,7 @@ public class SpawnZombie : MonoBehaviour
     public GameObject zombie;
     private float tiempo;
     private float timpoEsperado;
-    public Slider slider;
+    
 
     
 
@@ -31,7 +31,7 @@ public class SpawnZombie : MonoBehaviour
         {
             GameObject tempZombie = Instantiate(zombie,gameObject.transform.position, Quaternion.identity);
             tempZombie.GetComponent<Target>().setPersonaje(personaje);
-            tempZombie.GetComponent<Target>().setSlider(slider);
+            
             timpoEsperado += 6;
         }
 
