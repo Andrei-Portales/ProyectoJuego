@@ -12,6 +12,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
     {
         [SerializeField] private bool m_IsWalking;
         [SerializeField] private float m_WalkSpeed;
+        [SerializeField] private bool m_IsAiming;       // use for slow down while aiming
         [SerializeField] private float m_RunSpeed;
         [SerializeField] [Range(0f, 1f)] private float m_RunstepLenghten;
         [SerializeField] private float m_JumpSpeed;
@@ -42,6 +43,33 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        public MouseLook mouseLook {
+            get {
+                return m_MouseLook;
+            }
+        }
+        
+        public bool IsGrounded {
+            get {
+                return m_CharacterController.isGrounded;
+            }
+        }
+
+        public bool IsRunning {
+            get {
+                return !m_IsWalking;
+            }
+        }
+
+        public bool IsAiming {
+            get {
+                return m_IsAiming;
+            }
+            set {
+                m_IsAiming = value;
+            }
+        }
+
         // Use this for initialization
         private void Start()
         {
@@ -63,7 +91,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
         {
             RotateView();
             // the jump state needs to read here to make sure it is not missed
-            if (!m_Jump)
+            if (!m_Jump && m_CharacterController.isGrounded)
             {
                 m_Jump = CrossPlatformInputManager.GetButtonDown("Jump");
             }
@@ -108,7 +136,6 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_MoveDir.x = desiredMove.x*speed;
             m_MoveDir.z = desiredMove.z*speed;
 
-
             if (m_CharacterController.isGrounded)
             {
                 m_MoveDir.y = -m_StickToGroundForce;
@@ -125,6 +152,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             {
                 m_MoveDir += Physics.gravity*m_GravityMultiplier*Time.fixedDeltaTime;
             }
+            
             m_CollisionFlags = m_CharacterController.Move(m_MoveDir*Time.fixedDeltaTime);
 
             ProgressStepCycle(speed);
@@ -200,12 +228,31 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_Camera.transform.localPosition = newCameraPosition;
         }
 
+        bool skipMovement = false;
+        float moveHozBeforeJump;
+        float moveVertBeforeJump;
 
         private void GetInput(out float speed)
         {
             // Read input
             float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
+
+            if(!IsGrounded) {
+                if(!skipMovement) {
+                    moveHozBeforeJump = horizontal;
+                    moveVertBeforeJump = vertical;
+
+                    skipMovement = true;
+                }
+                else {
+                    horizontal = moveHozBeforeJump;
+                    vertical = moveVertBeforeJump;
+                }
+            }
+            else {
+                skipMovement = false;
+            }
 
             bool waswalking = m_IsWalking;
 
@@ -215,7 +262,13 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_IsWalking = !Input.GetKey(KeyCode.LeftShift);
 #endif
             // set the desired speed to be walking or running
-            speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            if(!m_IsAiming) {
+                speed = m_IsWalking ? m_WalkSpeed : m_RunSpeed;
+            }
+            else {
+                speed = m_WalkSpeed * 0.8f;
+            }
+            
             m_Input = new Vector2(horizontal, vertical);
 
             // normalize input if it exceeds 1 in combined length:
@@ -236,8 +289,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
         private void RotateView()
         {
-            if(!MenuPausa.gameIsPause)
-                m_MouseLook.LookRotation (transform, m_Camera.transform);
+            m_MouseLook.LookRotation (transform, m_Camera.transform);
         }
 
 
