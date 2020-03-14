@@ -60,7 +60,7 @@ public class Target : MonoBehaviour
     {
         if (other.gameObject.tag.Equals("Player"))
         {
-            other.gameObject.GetComponent<Player>().damage();
+//            other.gameObject.GetComponent<Player>().damage();
         }
     }
 
