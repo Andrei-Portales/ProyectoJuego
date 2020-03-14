@@ -1659,9 +1659,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77c1383b3ba3354ca8d4395adb4ce2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healt: 0
-  healthBar: {fileID: 322670965}
-  menuMuerte: {fileID: 0}
 --- !u!54 &1707960891
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2863,6 +2860,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.x
       value: -4.54
       objectReference: {fileID: 0}
+    - target: {fileID: 4859602335943984401, guid: 21c240cb4661e53429eba3ebfd863726,
+        type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: ac22cc56309d4784e9facd1b5894cb0e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 21c240cb4661e53429eba3ebfd863726, type: 3}
 --- !u!1001 &5502326288039699865
