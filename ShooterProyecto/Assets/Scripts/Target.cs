@@ -56,9 +56,18 @@ public class Target : MonoBehaviour
 
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(collision.transform.tag);
+        if (other.gameObject.tag.Equals("Player"))
+        {
+            other.gameObject.GetComponent<Player>().damage();
+        }
+    }
+
+
+    public void setSlider(Slider slider)
+    {
+        healthBar = slider;
     }
 
     public void TakeDamage(float amount)

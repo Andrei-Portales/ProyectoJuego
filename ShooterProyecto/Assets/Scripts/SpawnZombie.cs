@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnZombie : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class SpawnZombie : MonoBehaviour
     public GameObject zombie;
     private float tiempo;
     private float timpoEsperado;
+    
 
     
 
@@ -29,6 +31,7 @@ public class SpawnZombie : MonoBehaviour
         {
             GameObject tempZombie = Instantiate(zombie,gameObject.transform.position, Quaternion.identity);
             tempZombie.GetComponent<Target>().setPersonaje(personaje);
+            
             timpoEsperado += 6;
         }
 

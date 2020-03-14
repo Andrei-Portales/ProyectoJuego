@@ -1328,8 +1328,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
-  m_AnchoredPosition: {x: 5, y: 0}
-  m_SizeDelta: {x: -20, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1324722669
 GameObject:
@@ -1659,7 +1659,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a77c1383b3ba3354ca8d4395adb4ce2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  healt: 0
   healthBar: {fileID: 322670965}
+  menuMuerte: {fileID: 0}
 --- !u!54 &1707960891
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -3054,6 +3056,11 @@ PrefabInstance:
       propertyPath: personaje
       value: 
       objectReference: {fileID: 1707960889}
+    - target: {fileID: 5663880032093893223, guid: 355e3b43af5c3be41882ac880025cd36,
+        type: 3}
+      propertyPath: slider
+      value: 
+      objectReference: {fileID: 322670965}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 355e3b43af5c3be41882ac880025cd36, type: 3}
 --- !u!1001 &6301290576880425718

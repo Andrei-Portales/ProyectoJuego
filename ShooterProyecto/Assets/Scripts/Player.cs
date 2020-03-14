@@ -10,6 +10,7 @@ public class Player : MonoBehaviour {
 	public GameObject deadScreen;
 	
 
+<<<<<<< HEAD
 	void Start() {
 		healthManager = GetComponent<HealthManager>();
 		deadScreen = GameObject.Find("UI/InGameUI/DeadScreen");
@@ -63,4 +64,34 @@ public class Player : MonoBehaviour {
 			Physics.IgnoreCollision(GetComponent<Collider>(), hit.gameObject.GetComponent<Collider>());
 		}
 	}
+=======
+public class Player : MonoBehaviour
+{
+    public float healt;
+    public Slider healthBar;
+    public GameObject menuMuerte;
+
+    private void Start()
+    {
+        healt = 0f;
+    }
+
+
+    private void Update()
+    {
+        if (healt >= 1)
+        {
+            Time.timeScale = 0f;
+        }
+    }
+
+
+    public void damage()
+    {
+        healthBar.value += 0.10f;
+        healt += 0.10f;
+    }
+
+
+>>>>>>> d1d57959047fca7ae19d1813ea2143b2a4752616
 }
