@@ -63,4 +63,14 @@ public class MenuPausa : MonoBehaviour
         }
     }
 
+    public void reiniciar()
+    {
+        Time.timeScale = 1f;
+        foreach (GameObject g in Puntero)
+        {
+            g.SetActive(true);
+        }
+        SceneManager.LoadScene(1);
+    }
+
 }

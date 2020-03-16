@@ -15,6 +15,8 @@ public class MenuPrincipal : MonoBehaviour
     void Start()
     {
         Instantiate(musicaFondo);
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None; 
     }
 
 
