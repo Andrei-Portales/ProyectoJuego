@@ -7,6 +7,9 @@ public class Pausa : MonoBehaviour
 {
     public static bool Pausado = false;
     public GameObject isPaused;
+    private float tEsperado = 3;
+    private float tActual = 0;
+    
 
     private void Start()
     {
@@ -16,17 +19,25 @@ public class Pausa : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (Pausado)
+        
+
+        
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                Continuar();
+
+                if (Pausado)
+                {
+                    Continuar();
+                }
+                else
+                {
+                    Pausar();
+                }
+
             }
-            else
-            {
-                Pausar();
-            }
-        }
+       
+            
+     
 
     }
 

@@ -3,23 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityStandardAssets.Characters.FirstPerson;
+using UnityEngine.SceneManagement;
 
 public class Player : MonoBehaviour {
 	HealthManager healthManager;
 	bool isDestroyed = false;
 	public GameObject deadScreen;
+
+	
+	
 	
 
 	void Start() {
 		healthManager = GetComponent<HealthManager>();
 		deadScreen = GameObject.Find("UI/InGameUI/DeadScreen");
+		
+
 	}
 
 	void Update() {
+		
+
 		if(healthManager.IsDead && !isDestroyed) {
+			StartCoroutine(ShowDeadScreen());
 			isDestroyed = true;
 
-			StartCoroutine(ShowDeadScreen());
+			
+				SceneManager.LoadScene("MenuMuerte");
+			
+
+
 
 			MonoBehaviour[] scripts = GetComponentsInChildren<MonoBehaviour>();
 
@@ -45,6 +58,8 @@ public class Player : MonoBehaviour {
 	}
 
 	IEnumerator ShowDeadScreen() {
+		
+
 		deadScreen.SetActive(true);
 
 		Image image = deadScreen.GetComponent<Image>();
