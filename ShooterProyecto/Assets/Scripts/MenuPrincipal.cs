@@ -51,4 +51,10 @@ public class MenuPrincipal : MonoBehaviour
             yield return null;
         }
     }
+
+
+    public void salir()
+    {
+        Application.Quit();
+    }
 }
