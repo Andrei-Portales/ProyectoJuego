@@ -1,0 +1,18 @@
+Gracias por descargar Zombie Dye
+
+En este juego tendrás que sobrevivir el tiempo que puedas, pues cada vez los
+zombies se vuelven más fuertes y son cada vez más difíciles de matar. Piensa
+con cuidado tu estrategia y A MATAR ZOMBIES!
+
+Controles:
+
+1. WASD o flechas para moverse
+2. R para recargar
+3. F para comprar armas o mejoras en la pared
+4. Shift para correr
+5. Click izquierdo para disparar
+6. Click derecho para apuntar
+7. Space para saltar
+
+
+Disfrutalo!
