@@ -419,7 +419,7 @@ MonoBehaviour:
   - {fileID: 1612624980}
   target: {fileID: 1429202418419390, guid: 01b76535304b5e140be1fd2b72b44f76, type: 3}
   startHealth: 100
-  startMoveSpeed: 1
+  startMoveSpeed: 1.5
   startDamage: 15
   startEXP: 3
   startFund: 10
@@ -1663,7 +1663,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: -122}
-  m_SizeDelta: {x: 69.1, y: 32.1}
+  m_SizeDelta: {x: 69.1, y: 41.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &324114259
 MonoBehaviour:
