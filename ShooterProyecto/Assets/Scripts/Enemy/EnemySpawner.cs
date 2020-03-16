@@ -11,10 +11,10 @@ public class EnemySpawner : MonoBehaviour {
 	
 	[Header("Enemy Status")]
 	public float startHealth = 100f;
-	public float startMoveSpeed = 1.5f;
+	public float startMoveSpeed = 1f;
 	public float startDamage = 15f;
 	public int startEXP = 3;
-	public int startFund = 30;
+	public int startFund = 5;
 	public float upgradeDuration = 60f;	// Increase all enemy stats every 30 seconds
 
 	private float upgradeTimer;

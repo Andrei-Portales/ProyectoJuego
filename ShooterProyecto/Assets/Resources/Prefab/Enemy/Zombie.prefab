@@ -554,9 +554,9 @@ GameObject:
   - component: {fileID: 114753587529407094}
   - component: {fileID: 114206120869659722}
   - component: {fileID: 114274224845535184}
+  - component: {fileID: 114419666489660800}
   - component: {fileID: 195511393037926274}
   - component: {fileID: 82638481930533748}
-  - component: {fileID: 376102694927665063}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Enemy
@@ -641,11 +641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9671ded4e5e7b62489384a1e30a499d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-<<<<<<< HEAD
-  health: 100
-=======
   health: 105
->>>>>>> 7b0a071cd645bcfdb00a4ea8e889b4b1ecaded41
   isPlayer: 0
   removeColliderOnDeath: 1
   referer: {fileID: 0}
@@ -664,11 +660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-<<<<<<< HEAD
-  damage: 15
-=======
   damage: 17
->>>>>>> 7b0a071cd645bcfdb00a4ea8e889b4b1ecaded41
   isAttacking: 0
   shouldChase: 1
   isInLateUpdate: 0
@@ -688,7 +680,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   type: 0
-<<<<<<< HEAD
 --- !u!114 &114419666489660800
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -701,10 +692,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e8a33b4966453c24c8cd5918b8533c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  exp: 3
-  fund: 10
-=======
->>>>>>> 7b0a071cd645bcfdb00a4ea8e889b4b1ecaded41
+  exp: 4
+  fund: 11
 --- !u!195 &195511393037926274
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -715,11 +704,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-<<<<<<< HEAD
-  m_Speed: 1
-=======
   m_Speed: 1.7
->>>>>>> 7b0a071cd645bcfdb00a4ea8e889b4b1ecaded41
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 200
@@ -827,20 +812,6 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &376102694927665063
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1282407146977108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e8a33b4966453c24c8cd5918b8533c54, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exp: 6
-  fund: 31
 --- !u!1 &1295900811385314
 GameObject:
   m_ObjectHideFlags: 0
